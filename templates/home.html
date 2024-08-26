@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsB-Ashwanth</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #343a40;
+        }
+        .upload-form {
+            margin-top: 20px;
+        }
+        .logo {
+            margin-top: 20px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsB-Ashwanth</h1>
+    <form class="upload-form" method="POST" enctype="multipart/form-data">
+        <label for="logo">Upload your logo:</label>
+        <input type="file" name="logo" id="logo" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    {% if logo %}
+    <img src="{{ logo }}" alt="Uploaded Logo" class="logo">
+    {% endif %}
+</body>
+</html>
